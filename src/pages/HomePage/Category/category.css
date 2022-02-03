@@ -1,0 +1,50 @@
+.homepage_nav_menu_block_visible{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.homepage_nav_menu_block_not_visible{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    z-index: 2;
+    position: fixed;
+    overflow-x: auto;
+    background: #403C3B;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.homepage_nav_menu_block_not_visible::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    height: 0px;
+}
+
+.homepage_nav_menu_block_visible::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    height: 0px;
+}
+.homepage_nav_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.homepage_nav_menu_object{
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-right: 4%;
+    cursor: pointer;
+}
+
+.homepage_nav_menu_object_active{
+    border-bottom: #618967;
+    border-bottom-style: solid;
+    padding-bottom: 15px;
+}

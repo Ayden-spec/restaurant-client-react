@@ -1,0 +1,131 @@
+.container_object_list {
+    padding: 4% 0% 4% 0%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.object_list_title {
+    border-left-color: #618967;
+    border-left-style: solid;
+    border-left-width: 5px;
+    padding-left: 20px;
+    margin-left: 5%;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+}
+
+.object_list_map {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    margin-top: 3%;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.object_list_map::-webkit-scrollbar {
+    /* chrome based */
+    width: 0px;
+    /* ширина scrollbar'a */
+    height: 0px;
+}
+
+.object {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 3%;
+    width: 325px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+}
+
+.object_null{
+    margin-left: 3%;
+}
+
+.basket_count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #79B382;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0px;
+}
+
+.object_img {
+    width: 325px;
+    height: 227px;
+}
+
+.object_title_mass{
+    margin-top: 5%;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.object_title{
+    align-self: flex-end;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+}
+
+.object_mass{
+    align-self: flex-end;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.object_description{
+    width: 85%;
+    margin-top: 3%;
+    font-size: 13px;
+    font-weight: 400;
+    color: #CFCFCF;
+    white-space: pre-wrap;
+    align-self: center;
+}
+
+.object_price_basket{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.object_price{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Gilroy-ExtraBold;
+    align-self: center;
+}
+
+.object_basket_text{
+    font-size: 14px;
+    font-weight: 600;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.object_basket{
+    width: 24px;
+    align-self: center;
+    padding: 10px 0px 10px 0px;
+}

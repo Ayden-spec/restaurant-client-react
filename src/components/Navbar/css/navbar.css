@@ -1,0 +1,236 @@
+.container_nav {
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #403C3B;
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.nav_logo {
+    font-family: Gilroy-ExtraBold;
+    font-size: 28px;
+    font-weight: 900;
+    align-self: center;
+    cursor: pointer;
+}
+
+.nav_block_input_contacts {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.nav_input_block {
+    width: 40%;
+    max-height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #504B4A;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav_input_position_input {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.nav_img {
+    align-self: center;
+    width: 24px;
+    height: 24px;
+}
+
+.nav_input {
+    margin: 0px 10px 0px 10px;
+    background: #504B4A !important;
+    outline: none !important;
+    border: none;
+    color: #CFCFCF;
+    width: 90%;
+}
+
+.nav_input::placeholder {
+    color: #CFCFCF;
+}
+
+.nav_phone {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-self: center;
+}
+
+.nav_phone_img_block {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #618967;
+    border-radius: 50%;
+}
+
+.nav_phone_img {
+    width: 16px;
+    height: 16px;
+    align-self: center;
+}
+
+.nav_line {
+    margin: 0px 10px 0px 10px;
+    border-left-style: solid;
+    max-height: 40px;
+    border-left-color: #635C5A;
+}
+
+.nav_profile {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav_profile_svg {
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
+}
+
+.nav_basket_button {
+    padding: 0px 15px 0px 15px;
+    max-height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #618967;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav_basket_button_2 {
+    padding: 3px 10px 3px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #618967;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav_basket_img {
+    width: 20px;
+    height: 20px;
+}
+
+.nav_basket_2{
+    font-size: 12px;
+}
+
+.nav_basket_line {
+    width: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    ;
+}
+
+.nav_basket {
+    align-self: center;
+    white-space: nowrap;
+}
+
+.count_basket {
+    align-self: center;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #618967;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    .nav_input_block {
+        width: 25%;
+        max-height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        background-color: #504B4A;
+        border-radius: 10px;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .nav_phone {
+        display: none;
+    }
+
+    .nav_line {
+        display: none;
+    }
+
+    .nav_basket_button {
+        padding: 0px 15px 0px 15px;
+        max-height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #618967;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 551px) {
+    .container_nav {
+        z-index: 2;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #403C3B;
+        padding: 15px 0px 15px 0px;
+        width: 100%;
+        height: 85px;
+    }
+    .nav_input_block {
+        margin-top: 10px;
+        width: 80%;
+        max-height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        background-color: #504B4A;
+        border-radius: 10px;
+        padding: 10px 10px 10px 10px;
+    }
+}

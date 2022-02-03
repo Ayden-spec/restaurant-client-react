@@ -1,0 +1,408 @@
+.container_basket {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 120px;
+    background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
+}
+
+.basket_back_title {
+    width: 80%;
+    align-self: center;
+}
+
+.basket_button_back {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.basket_button_back_img {
+    width: 10px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.basket_count_title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.basket_title {
+    border-left-color: #618967;
+    border-left-style: solid;
+    border-left-width: 5px;
+    padding-left: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+}
+
+.basket_counter {
+    margin-left: 2%;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(114, 164, 121, 1);
+    white-space: nowrap;
+}
+
+.basket_map {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    align-self: center;
+    width: 90%;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+}
+
+.basket_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.basket_img_description {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.basket_img {
+    width: 120px;
+    height: 90px;
+}
+
+.basket_title_description {
+    margin-left: 3%;
+    width: 70%;
+}
+
+.basket_list_title {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+}
+
+.basket_list_description {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(166, 167, 171, 1);
+}
+
+.basket_count_product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.basket_count_product_div_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(114, 164, 121, 1);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+}
+
+.count_product {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+    margin: 0px 10px 0px 10px;
+}
+
+.basket_count_product_img {
+    width: 15px;
+}
+
+.basket_price {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+    white-space: nowrap;
+}
+
+.basket_count_flex_column {
+    width: 45%;
+}
+
+.basket_list_title_2 {
+    display: none;
+}
+
+.basket_count_flex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.add_to_order_block {
+    width: 90%;
+    align-self: center;
+    padding-bottom: 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add_to_order_title {
+    margin-bottom: 3%;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+    white-space: nowrap;
+}
+
+.add_to_order_menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+}
+
+.add_to_order_menu::-webkit-scrollbar {
+    /* chrome based */
+    width: 0px;
+    /* ширина scrollbar'a */
+    height: 0px;
+}
+
+.add_to_order_product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 30px 30px 30px;
+}
+
+.add_to_order_product_border {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add_to_order_img {
+    width: 209px;
+    height: 123px;
+    border-radius: 10px;
+}
+
+.add_to_order_product_title {
+    margin-top: 2%;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+    white-space: nowrap;
+}
+
+.add_to_order_product_add {
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(198, 206, 209, 1);
+    white-space: nowrap;
+}
+
+.add_to_order_product_price {
+    margin-top: 2%;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+    white-space: nowrap;
+}
+
+.basket_basket_price_block {
+    width: 70%;
+    margin: 5% 0px 5% 0px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+    padding: 30px 30px 30px 30px;
+}
+
+.basket_basket_price_desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.basket_basket_price {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.basket_basket_price_text {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Gilroy-ExtraBold;
+    white-space: nowrap;
+    color: rgba(198, 206, 209, 1);
+}
+
+.basket_basket_price_value {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+    white-space: nowrap;
+}
+
+.basket_basket_delivery_text {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.basket_basket_delivery_value {
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: rgba(114, 164, 121, 1);
+}
+
+.basket_basket_price_button {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Gilroy-ExtraBold;
+    white-space: nowrap;
+    padding: 15px 15px 15px 15px;
+    background: rgba(114, 164, 121, 1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 551px) {
+    .basket_map {
+        margin-top: 3%;
+        margin-bottom: 3%;
+        align-self: center;
+        width: 95%;
+        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+        border-radius: 10px;
+    }
+
+    .basket_title_description {
+        display: none;
+    }
+
+    .basket_list_title_2 {
+        display: flex;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: Gilroy-ExtraBold;
+        margin-bottom: 5%;
+    }
+
+    .basket_count_flex_column {
+        width: 95%;
+    }
+
+    .basket_title {
+        border-left-color: #618967;
+        border-left-style: solid;
+        border-left-width: 5px;
+        padding-left: 20px;
+        font-size: 24px;
+        font-weight: 700;
+        font-family: Gilroy-ExtraBold;
+    }
+
+    .basket_counter {
+        margin-left: 2%;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(114, 164, 121, 1);
+        white-space: nowrap;
+    }
+
+    .basket_count_product_div_img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(114, 164, 121, 1);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    .count_product {
+        font-size: 15px;
+        font-weight: 700;
+        font-family: Gilroy-ExtraBold;
+        margin: 0px 10px 0px 10px;
+    }
+
+    .basket_price {
+        font-size: 15px;
+        font-weight: 700;
+        font-family: Gilroy-ExtraBold;
+        white-space: nowrap;
+    }
+
+    .basket_count_product_img {
+        width: 12px;
+    }
+
+    .add_to_order_title {
+        margin-bottom: 3%;
+        font-size: 24px;
+        font-weight: 700;
+        font-family: Gilroy-ExtraBold;
+        white-space: nowrap;
+    }
+
+    .basket_basket_price_block {
+        width: 70%;
+        margin: 5% 0px 5% 0px;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+        border-radius: 10px;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .basket_basket_price {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    .basket_basket_delivery_text {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .basket_basket_price_button {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: Gilroy-ExtraBold;
+        white-space: nowrap;
+        padding: 15px 15px 15px 15px;
+        background: rgba(114, 164, 121, 1);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+}

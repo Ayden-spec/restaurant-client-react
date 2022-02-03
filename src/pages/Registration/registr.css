@@ -1,0 +1,104 @@
+.registration_block {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
+    align-items: center;
+    justify-content: center;
+}
+
+.registration {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding: 25px 25px 25px 25px;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border: 1px solid #969494;
+}
+
+.registration_title {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Gilroy-ExtraBold;
+    margin: 20px 0 20px 0;
+}
+
+.divButtonsRegistration {
+    margin-top: 30px;
+    margin-right: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.registration_input{
+    width: 90%;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1001px) {
+    .divButtonsRegistration {
+        margin-top: 30px;
+        margin-right: 20px;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .registration_input{
+        width: 90%;
+        padding-right: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 701px) {
+    .registration {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        padding: 25px 25px 25px 25px;
+        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+        border: 1px solid #969494;
+    }
+    .divButtonsRegistration {
+        margin-top: 30px;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .registration_input{
+        width: 100%;
+        padding-right: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 551px) {
+    .registration {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        padding: 25px 25px 25px 25px;
+        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+        border: 1px solid #969494;
+    }
+
+    .divButtonsRegistration {
+        margin-top: 30px;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

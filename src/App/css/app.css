@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Gilroy;
+    src: url('../../assets/fonts/gilroy/Gilroy-Light.otf');
+}
+
+@font-face {
+    font-family: Gilroy-ExtraBold;
+    src: url('../../assets/fonts/gilroy/Gilroy-ExtraBold.otf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Gilroy;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(360deg, #211F20 0%, #44403F 100%)
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(219, 219, 219, 0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgb(167, 167, 167);
+}
+
+div::selection {
+    background: transparent;
+}
+
+div::-moz-selection {
+    background: transparent;
+}

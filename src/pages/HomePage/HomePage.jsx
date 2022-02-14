@@ -8,7 +8,6 @@ import Contacts from './Contacts/Contacts';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { get_basket_user, get_categories_products } from '../../actions/user';
-import { logout } from '../../reducers/userReducers';
 
 
 const HomePage = () => {
@@ -16,6 +15,8 @@ const HomePage = () => {
     const [size, setSize] = useState([0, 0]);
 
     const categories = useSelector(state => state.user.categories)
+    const products = useSelector(state => state.user.products)
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(get_categories_products());
@@ -32,11 +33,11 @@ const HomePage = () => {
     const width = size[0]
     return (
         <div className="container_homepage">
-            <img src={width >= 550 ? Logo : Logo_Mini} alt="Title" className="title" onClick={() => dispatch(logout())} />
+            <img src={width >= 550 ? Logo : Logo_Mini} alt="Title" className="title"/>
             <Category value={Homepage_Menu} setValue={Set_Homepage_Menu} array={categories} />
             {
                 categories.map((element, index) => (
-                    <ObjectList mainpage={true} value={Homepage_Menu} setValue={Set_Homepage_Menu} key={index} name={element} index={index} />
+                    <ObjectList array={products} mainpage={true} value={Homepage_Menu} setValue={Set_Homepage_Menu} name={element} index={index} />
                 ))
             }
             <div className='Google_Map'>

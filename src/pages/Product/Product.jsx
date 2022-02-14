@@ -9,7 +9,7 @@ import GoogleMapComponentWithMarker from '../../components/Map/GoogleMapComponen
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { get_product_id, product_add_basket } from '../../actions/user'
+import { get_product_id, get_recomendation, product_add_basket } from '../../actions/user'
 
 function Product() {
     const product = useSelector(state => state.user.products)
@@ -20,7 +20,8 @@ function Product() {
     const { id } = useParams();
 
     useEffect(() => {
-        dispatch(get_product_id(id))
+        dispatch(get_product_id(id));
+        dispatch(get_recomendation());
     }, [])
 
 

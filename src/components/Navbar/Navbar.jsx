@@ -2,16 +2,22 @@ import './css/navbar.css'
 import Position from '../assets/navbar/position.png'
 import Magnifying_Glass from '../assets/navbar/magnifying_glass.png'
 import Phone from '../assets/navbar/phone.png'
-import Profile from '../assets/navbar/profile.svg'
+import Login from './img/login.svg'
+import Logout from './img/logout.png'
 import Basket from '../assets/homepage/object_list/basket.png'
 
 import { useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { logout } from '../../reducers/userReducers'
 
 const Navbar = () => {
     const [Basket_, SetBasket] = useState([]);
     const [size, setSize] = useState([0, 0]);
-    
+
+    const isAuth = useSelector(state => state.user.isAuth)
+
     useLayoutEffect(() => {
         document.addEventListener(`storageChanged_basket_nav`, function () { SetBasket(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')) : []); }, false);
         SetBasket(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')) : []);
@@ -24,15 +30,21 @@ const Navbar = () => {
         return () => window.removeEventListener('resize', updateSize);
     }, []);
 
-    const width = size[0]
+    const width = size[0];
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     return (
         <div className="container_nav">
             <div className="navbar">
                 {
                     width <= 550 &&
-                    <div className='nav_profile' onClick={() => { navigate('/login'); window.scrollBy(0, -100000) }}>
-                        <img src={Profile} alt="Profile" className='nav_profile_svg' />
+                    <div className='nav_profile'>
+                        {
+                            isAuth ?
+                                <img src={Logout} alt="Logout" className='nav_profile_svg' onClick={() => dispatch(logout())} />
+                                :
+                                <img src={Login} alt="Login" className='nav_profile_svg' onClick={() => { navigate('/login'); window.scrollBy(0, -100000) }} />
+                        }
                     </div>
                 }
                 <div className="nav_logo" onClick={() => { navigate('/'); window.scrollBy(0, -100000) }}>LOGOS</div>
@@ -58,10 +70,18 @@ const Navbar = () => {
                             </div>
                         </div>
                         <div className="nav_line" />
-                        <div className='nav_profile' onClick={() => { navigate('/login'); window.scrollBy(0, -100000) }}>
-                            <img src={Profile} alt="Profile" className='nav_profile_svg' />
-                            Войти
-                        </div>
+                        {
+                            isAuth ?
+                                <div className='nav_profile' onClick={() => { dispatch(logout()) }}>
+                                    <img src={Logout} alt="Login" className='nav_profile_svg' />
+                                    Выйти
+                                </div>
+                                :
+                                <div className='nav_profile' onClick={() => { navigate('/login'); window.scrollBy(0, -100000) }}>
+                                    <img src={Login} alt="Login" className='nav_profile_svg' />
+                                    Войти
+                                </div>
+                        }
                     </div>
                 }
                 {

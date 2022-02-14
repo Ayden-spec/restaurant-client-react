@@ -5,7 +5,7 @@ import Delete from '../../assets/basket/delete.png'
 import './basket.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { get_recomendation, product_add_basket, product_delete_basket, product_minus_basket, product_plus_basket } from '../../actions/user'
+import { get_basket_user, get_recomendation, product_add_basket, product_delete_basket, product_minus_basket, product_plus_basket } from '../../actions/user'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -16,7 +16,8 @@ function Basket() {
     const isAuth = useSelector(state => state.user.isAuth)
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(get_recomendation())
+        dispatch(get_recomendation());
+        dispatch(get_basket_user());
         storageChanged();
         document.addEventListener(`storageChanged_basket`, function () { storageChanged() }, false);
     }, [])

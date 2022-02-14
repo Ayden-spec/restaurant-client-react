@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { product_add_basket, product_delete_basket, product_minus_basket, product_plus_basket } from '../../../actions/user';
 
-function Comp({ element, index }) {
+function ProductCard({ element, index }) {
     const navigate = useNavigate();
     const dispatch = useDispatch()
 
@@ -117,4 +117,4 @@ function Comp({ element, index }) {
     )
 }
 
-export default Comp
+export default ProductCard

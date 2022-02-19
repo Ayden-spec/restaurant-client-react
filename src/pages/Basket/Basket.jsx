@@ -1,8 +1,8 @@
+import './basket.css'
 import Back from '../../assets/basket/back.png'
 import Plus from '../../assets/basket/plus.png'
 import Minus from '../../assets/basket/minus.png'
 import Delete from '../../assets/basket/delete.png'
-import './basket.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { get_basket_user, get_recomendation, product_add_basket, product_delete_basket, product_minus_basket, product_plus_basket } from '../../actions/user'
@@ -39,7 +39,7 @@ function Basket() {
     const basket_add = (element) => {
         console.log(element)
         if (localStorage.getItem('basket')) {
-            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined) {
+            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined) {
                 return
             }
         }
@@ -57,9 +57,9 @@ function Basket() {
 
     const basket_plus = (element) => {
         if (localStorage.getItem('basket')) {
-            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined) {
+            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined) {
                 let arr = JSON.parse(localStorage.getItem('basket'));
-                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id == element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id).basket + 1, description: element.description, image: element.image, name: element.name, price: element.price }
+                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id === element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id).basket + 1, description: element.description, image: element.image, name: element.name, price: element.price }
                 storage_basket_add(arr)
                 if (isAuth) {
                     dispatch(product_plus_basket(element.product_id))
@@ -70,10 +70,10 @@ function Basket() {
 
     const basket_minus = (element) => {
         if (localStorage.getItem('basket')) {
-            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined) {
+            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined) {
                 let arr = JSON.parse(localStorage.getItem('basket'));
-                if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id).basket === 1) {
-                    arr.splice(JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id == element.product_id), 1)
+                if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id).basket === 1) {
+                    arr.splice(JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id === element.product_id), 1)
                     storage_basket_add(arr)
                     document.dispatchEvent(new Event(`storageChanged_basket_nav`));
                     if (isAuth) {
@@ -81,7 +81,7 @@ function Basket() {
                     }
                     return
                 }
-                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id == element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id).basket - 1, description: element.description, image: element.image, name: element.name, price: element.price }
+                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id === element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id).basket - 1, description: element.description, image: element.image, name: element.name, price: element.price }
                 storage_basket_add(arr)
                 if (isAuth) {
                     dispatch(product_minus_basket(element.product_id))
@@ -92,9 +92,9 @@ function Basket() {
 
     const basket_delete = (element) => {
         if (localStorage.getItem('basket')) {
-            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined) {
+            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined) {
                 let arr = JSON.parse(localStorage.getItem('basket'));
-                arr.splice(JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id == element.product_id), 1)
+                arr.splice(JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id === element.product_id), 1)
                 storage_basket_add(arr)
                 document.dispatchEvent(new Event(`storageChanged_basket_nav`));
                 if (isAuth) {
@@ -120,7 +120,7 @@ function Basket() {
             <div className="basket_map">
                 {
                     Basket.map((element) => (
-                        <div className="basket_list">
+                        <div className="basket_list" key={`Product_Id_${element.product_id}`}>
                             <div className="basket_img_description">
                                 <img src={element.image} alt={element.name} className="basket_img" /*onClick={()=>handle(element.product_id)}*/ />
                                 <div className="basket_title_description">
@@ -155,7 +155,7 @@ function Basket() {
                 <div className="add_to_order_menu">
                     {
                         recommendations_list.map((element, index) => (
-                            <div className={index !== 0 ? "add_to_order_product add_to_order_product_border" : "add_to_order_product"}>
+                            <div className={index !== 0 ? "add_to_order_product add_to_order_product_border" : "add_to_order_product"} key={`Recomendation_Card_${element.product_id}`}>
                                 <img src={element.image} alt={element.name} className="add_to_order_img" />
                                 <div className="add_to_order_product_title">{element.name}</div>
                                 <div className="basket_count_product" onClick={() => basket_add(element)}>

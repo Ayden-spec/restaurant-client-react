@@ -37,7 +37,7 @@ const HomePage = () => {
             <Category value={Homepage_Menu} setValue={Set_Homepage_Menu} array={categories} />
             {
                 categories.map((element, index) => (
-                    <ObjectList array={products} mainpage={true} value={Homepage_Menu} setValue={Set_Homepage_Menu} name={element} index={index} />
+                    <ObjectList array={products} mainpage={true} value={Homepage_Menu} setValue={Set_Homepage_Menu} name={element} index={index} key={`ObjectList_id_${index}`}/>
                 ))
             }
             <div className='Google_Map'>

@@ -34,7 +34,7 @@ function Promotion() {
             <div className="container_promotion_objects">
                 {
                     promotion_objects.map((element)=>(
-                        <Promotion_Object title={element.name} text={element.description} image={element.image} date={date(element.end_date)}/>
+                        <Promotion_Object key={`Promotion_Name_${element.name}`} title={element.name} text={element.description} image={element.image} date={date(element.end_date)}/>
                     ))
                 }
             </div>

@@ -1,7 +1,7 @@
 import './css/app.css'
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { auth } from "../actions/user";
 
 import Navbar from "../components/Navbar/Navbar";

@@ -48,6 +48,7 @@ function Delivery() {
                     {
                         arr.map((element, index) => (
                             <List_Select
+                                key={`List_Select_${index}`}
                                 value={List_Select_ID}
                                 text={element.text}
                                 title={element.title}

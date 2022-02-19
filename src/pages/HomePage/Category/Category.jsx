@@ -64,7 +64,7 @@ const Category = (props) => {
             <div className="homepage_nav_menu">
                 {
                     props.array.map((element, index) => (
-                        <div key={index} onClick={() => clickmenu(index)} className={props.value === index ? 'homepage_nav_menu_object homepage_nav_menu_object_active' : 'homepage_nav_menu_object'}>{element.category_name}</div>
+                        <div key={`category_id_${index}`} onClick={() => clickmenu(index)} className={props.value === index ? 'homepage_nav_menu_object homepage_nav_menu_object_active' : 'homepage_nav_menu_object'}>{element.category_name}</div>
                     ))
                 }
             </div>

@@ -21,7 +21,7 @@ function ProductCard({ element, index }) {
 
 
     const storageChanged = () => {
-        SetBasket(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined ? JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id).basket : null : null);
+        SetBasket(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined ? JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id).basket : null : null);
     }
 
     const storage_basket_add = (e) => {
@@ -31,7 +31,7 @@ function ProductCard({ element, index }) {
 
     const basket_add = () => {
         if (localStorage.getItem('basket')) {
-            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined) {
+            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined) {
                 return
             }
         }
@@ -49,9 +49,9 @@ function ProductCard({ element, index }) {
 
     const basket_plus = () => {
         if (localStorage.getItem('basket')) {
-            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined) {
+            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined) {
                 let arr = JSON.parse(localStorage.getItem('basket'));
-                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id == element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id).basket + 1, description: element.description, image: element.image, name: element.name, price: element.price }
+                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id === element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id).basket + 1, description: element.description, image: element.image, name: element.name, price: element.price }
                 storage_basket_add(arr)
                 if (isAuth) {
                     dispatch(product_plus_basket(element.product_id))
@@ -62,10 +62,10 @@ function ProductCard({ element, index }) {
 
     const basket_minus = () => {
         if (localStorage.getItem('basket')) {
-            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id) !== undefined) {
+            if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id) !== undefined) {
                 let arr = JSON.parse(localStorage.getItem('basket'));
-                if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id).basket === 1) {
-                    arr.splice(JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id == element.product_id), 1)
+                if (JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id).basket === 1) {
+                    arr.splice(JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id === element.product_id), 1)
                     storage_basket_add(arr)
                     document.dispatchEvent(new Event(`storageChanged_basket_nav`));
                     if (isAuth) {
@@ -73,7 +73,7 @@ function ProductCard({ element, index }) {
                     }
                     return
                 }
-                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id == element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id == element.product_id).basket - 1, description: element.description, image: element.image, name: element.name, price: element.price }
+                arr[JSON.parse(localStorage.getItem('basket')).findIndex(el => el.product_id === element.product_id)] = { product_id: element.product_id, basket: JSON.parse(localStorage.getItem('basket')).find(el => el.product_id === element.product_id).basket - 1, description: element.description, image: element.image, name: element.name, price: element.price }
                 storage_basket_add(arr)
                 if (isAuth) {
                     dispatch(product_minus_basket(element.product_id))
